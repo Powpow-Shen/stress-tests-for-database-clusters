@@ -1,0 +1,8 @@
+haproxy:
+  image: haproxy
+  ports:
+    - "80"
+couchdbinstance:
+  image: powpowshen/couchdb
+  ports:
+    - "5984"

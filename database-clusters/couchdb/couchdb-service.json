@@ -1,0 +1,22 @@
+{
+   "kind":"Service",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"couchdb",
+      "labels":{
+         "name":"couchdb"
+      }
+   },
+   "spec":{
+      "ports": [
+        {
+          "port":5984,
+          "targetPort":5984,
+          "protocol":"TCP"
+        }
+      ],
+      "selector":{
+         "name":"couchdb"
+      }
+   }
+}

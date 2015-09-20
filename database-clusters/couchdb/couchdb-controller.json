@@ -1,0 +1,37 @@
+{
+   "kind":"ReplicationController",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"couchdb",
+      "labels":{
+         "name":"couchdb"
+      }
+   },
+   "spec":{
+      "replicas":1,
+      "selector":{
+         "name":"couchdb"
+      },
+      "template":{
+         "metadata":{
+            "labels":{
+               "name":"couchdb"
+            }
+         },
+         "spec":{
+            "containers":[
+               {
+                  "name":"couchdb-20",
+                  "image":"klaemo/couchdb:2.0-dev",
+                  "ports":[
+                     {
+                        "containerPort":5984,
+                        "protocol":"TCP"
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}
